@@ -12,10 +12,56 @@ var songLink = ["https://www.youtube.com/watch?v=uZ-_HIoEBE8","https://www.youtu
 
 
 
-    // BELOW Use forEach Loop to display the data from each of your array's in the correct div
+    // BELOW Use forEach Loop to display the data from each of your array's in the correct di
+    
+    
+    
+
+function emptySongInfo(){
+    console.log('emptying');
+    //$("#songs").empty();
+  $('#songs').empty();
+   $('#artists').empty();
+   $('#lengths').empty();
+   $('#images').empty();
+   $('#links').empty();
+   
+   $('#song').empty();
+   $('#artist').empty();
+   $('#length').empty();
+   $('#image').empty();
+   $('#link').empty();
+    // Use jQuery to empty all of the remaining divs
 
 
- songs.forEach(function(so) {
+}
+
+
+function addSongInfo(){
+    // BELOW write the code to add new items to each of the arrays.
+  var ongs = $('#song').val(); 
+  var arti = $('#artist').val();
+  var leng = $("#length").val();
+  var age = $("#image").val();
+  var ink = $("#link").val();
+    
+    songs.push(ongs);
+    artists.push(arti);
+    imagesLinks.push(age);
+    songLength.push(leng);
+    songLink.push(ink);
+    
+}
+function displaySongInfo(){
+//  $('#song').empty();
+//     $('#artist').empty();
+//     $('#length').empty();
+//     $('#image').empty();
+//     $('#link').empty();
+    
+    
+    
+  songs.forEach(function(so) {
         $('#songs').append("<p>" + so + "</p>");
     });
     
@@ -35,28 +81,7 @@ var songLink = ["https://www.youtube.com/watch?v=uZ-_HIoEBE8","https://www.youtu
         $('#links').append("<a href =" + lin + ">Listen Now</a>");
     
     });
-    
-    
-    
-    
-
-function emptySongInfo(){
-    $("#songs").empty();
-    
-   
-    // Use jQuery to empty all of the remaining divs
-
-
-}
-
-
-function addSongInfo(){
-    // BELOW write the code to add new items to each of the arrays.
-
-
-}
-function displaySongInfo(){
-    
+       
 }
 $("#add").click(function() {
     emptySongInfo();
@@ -64,3 +89,4 @@ $("#add").click(function() {
     displaySongInfo();
 });
 
+ displaySongInfo();
